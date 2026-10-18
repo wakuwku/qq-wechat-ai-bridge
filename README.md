@@ -8,7 +8,7 @@
 
 **这是 Windows 上的社区实验项目，不是腾讯或 DeepSeek 官方产品。** 本次整理版提供 DSH 连接；Codex 并列后端仍属后续工作，不宣称已完成生产接入。
 
-[项目展示](https://wakuwku.github.io/dafeiyu/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
+[项目展示](https://wakuwku.github.io/dafeiyu/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [表情库建库](wechat-bridge/tools/sticker/README.md) · [运维与排障](docs/OPERATIONS.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
 
 | | QQ | 微信 |
 |---|---|---|
@@ -27,11 +27,15 @@
 dafeiyu/
 ├── qq-bridge/       QQ 桥接、控制台、预设、离线测试
 ├── wechat-bridge/   微信闭环、收发客户端、解码器、专用预设
-├── docs/            展示页、审计、外部 hook 接入说明
+│   ├── tools/sticker/   表情库建库：导出收藏 → 重建索引 → 校验 md5
+│   └── stickers/        表情库（只有结构示例；素材需要自己准备）
+├── docs/            展示页、审计、外部 hook 接入说明、运维与排障笔记
 ├── tools/           发布扫描与打包工具
 ├── SECURITY.md
 └── THIRD_PARTY_NOTICES.md
 ```
+
+`docs/OPERATIONS.md` 汇总了运行期真正会咬人的坑（DSH 动态端口、预设模板变量失效导致 turn 直接失败、进程被 job object 带走、掉线取证、孤儿进程、静默降级清单），排查故障前建议先看它。
 
 ## 下载与开始
 

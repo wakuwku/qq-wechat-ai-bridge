@@ -1,0 +1,12 @@
+{
+  "_说明": "结构示例，不含任何真实收藏。实际文件是 stickers/native-md5.json，由 tools/sticker/rebuild_library_from_favorites.py 生成、validate_native_map.py 校验。",
+  "schema_version": 2,
+  "rebuilt_at": "2026-01-01",
+  "note": "来自当前微信收藏（Persist 目录，文件名即 md5）。改收藏后重跑导出与重建即可。",
+  "stickers": {
+    "0123456789abcdef": {
+      "md5": "0123456789abcdef0123456789abcdef",
+      "file": "0123456789abcdef0123456789abcdef.png"
+    }
+  }
+}

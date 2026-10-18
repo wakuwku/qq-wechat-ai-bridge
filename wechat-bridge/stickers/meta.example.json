@@ -1,0 +1,33 @@
+{
+  "_说明": "结构示例，不含任何真实收藏。实际文件是 stickers/meta.json，由 tools/sticker/rebuild_library_from_favorites.py 生成。",
+  "version": 3,
+  "rebuilt_at": "2026-01-01",
+  "note": "文件名即表情 md5。sticker id = md5 前 16 位；只有这份表里 native=true 的表情能发原生 type47。",
+  "stickers": {
+    "0123456789abcdef": {
+      "file": "0123456789abcdef0123456789abcdef.png",
+      "desc": "示例：什么图（会注入提示词，模型据此选用）",
+      "localNote": "示例：本地备注，可以是梗或使用场景",
+      "tags": ["示例标签", "逗"],
+      "source": "微信收藏",
+      "size": 24576,
+      "native": true,
+      "nativeMd5": "0123456789abcdef0123456789abcdef",
+      "usedCount": 0,
+      "lastUsedAt": "",
+      "addedAt": ""
+    },
+    "fedcba9876543210": {
+      "file": "fedcba9876543210fedcba9876543210.gif",
+      "desc": "示例：只有图片、不能原生发送的表情",
+      "localNote": "",
+      "tags": [],
+      "source": "微信收藏",
+      "size": 51200,
+      "native": false,
+      "usedCount": 3,
+      "lastUsedAt": "2026-01-01T00:00:00.000Z",
+      "addedAt": ""
+    }
+  }
+}

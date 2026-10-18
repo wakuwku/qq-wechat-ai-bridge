@@ -9,3 +9,4 @@ __pycache__/
 stickers/*
 !stickers/README.md
 !stickers/meta.example.json
+!stickers/native-md5.example.json
