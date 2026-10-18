@@ -8,7 +8,7 @@
 
 **这是 Windows 上的社区实验项目，不是腾讯或 DeepSeek 官方产品。** 本次整理版提供 DSH 连接；Codex 并列后端仍属后续工作，不宣称已完成生产接入。
 
-[项目展示](https://wakuwku.github.io/dafeiyu/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [表情库建库](wechat-bridge/tools/sticker/README.md) · [运维与排障](docs/OPERATIONS.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
+[项目展示](https://wakuwku.github.io/dafeiyu/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [表情库建库](wechat-bridge/tools/sticker/README.md) · [hook 扩展](hook-ext/README.md) · [运维与排障](docs/OPERATIONS.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
 
 | | QQ | 微信 |
 |---|---|---|
@@ -29,6 +29,7 @@ dafeiyu/
 ├── wechat-bridge/   微信闭环、收发客户端、解码器、专用预设
 │   ├── tools/sticker/   表情库建库：导出收藏 → 重建索引 → 校验 md5
 │   └── stickers/        表情库（只有结构示例；素材需要自己准备）
+├── hook-ext/        微信 hook 的自研扩展：原生收藏表情（type47）发送链路
 ├── docs/            展示页、审计、外部 hook 接入说明、运维与排障笔记
 ├── tools/           发布扫描与打包工具
 ├── SECURITY.md
@@ -36,6 +37,16 @@ dafeiyu/
 ```
 
 `docs/OPERATIONS.md` 汇总了运行期真正会咬人的坑（DSH 动态端口、预设模板变量失效导致 turn 直接失败、进程被 job object 带走、掉线取证、孤儿进程、静默降级清单），排查故障前建议先看它。
+
+## 关于微信 hook
+
+微信侧的收发依赖一个注入到 `Weixin.exe` 的 `version.dll`。我们用上游
+[`aixed/wechat_control`](https://github.com/aixed/wechat_control)（未声明 license）作为基座，
+在它之上自己写了原生收藏表情（type47）的发送链路 —— 那部分在 [`hook-ext/`](hook-ext/README.md)。
+
+**本仓库不分发上游源码，也不分发编译好的 DLL**；`hook-ext/` 只有自研代码，需要你有一份可用的上游 hook 才能接进去。
+微信版本锁 **4.1.10.27**，其他版本函数地址会变。接入条件与安全要求见
+[`docs/HOOK-DEPENDENCY.md`](docs/HOOK-DEPENDENCY.md)。
 
 ## 下载与开始
 
