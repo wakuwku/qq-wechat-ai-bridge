@@ -11,7 +11,7 @@ md5 就丢了，只能靠另外的映射表维系，用户一增删收藏就对�
 解密后的 payload 有两种：直接是 PNG/GIF/JPEG/WEBP，或者是 `wxgf` 容器（HEVC），需要解首帧。
 
 用法：
-  set DFY_WECHAT_ACCOUNT_DIR=F:\\wxdata\\xwechat_files\\wxid_xxx_1234
+  set DFY_WECHAT_ACCOUNT_DIR=<微信数据目录>\xwechat_files\wxid_xxx_1234
   python export_favorites.py --dry-run          # 只看会导出什么，不写文件
   python export_favorites.py --apply            # 真的写到 stickers/
   python export_favorites.py --apply --key-hex <32位hex>   # 派生失败时手工给 key
