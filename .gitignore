@@ -1,0 +1,14 @@
+**/node_modules/
+**/state/
+**/__pycache__/
+**/config.json
+**/.env
+**/.env.*
+**/*.log
+**/*.bak*
+*.zip
+*.pyc
+*.dll
+*.exe
+*.pdb
+.DS_Store

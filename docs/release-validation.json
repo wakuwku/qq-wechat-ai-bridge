@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "scope": "reviewed publication copy; no production client changes or live sends",
+  "qq_audit_scripts": {"passed": 31, "total": 31, "method": "30 passed in suite; remaining voice documentation check passed after restoring public guide", "environment": "Node 24; installed DSH tool-name inventory supplied explicitly"},
+  "wechat_python_tests": {"passed": 13, "total": 13},
+  "wechat_js_assertions": {"reply_clean": 9, "sticker_gate": 15, "mode_memory": 35, "release_security": 6},
+  "syntax": {"javascript_files": 124, "python_files": 16, "json_files": 11, "failures": 0},
+  "npm_audit": {"qq_vulnerabilities": 0, "wechat_vulnerabilities": 0, "note": "known npm advisories at audit time only"},
+  "privacy": {"private_config_identifiers_found_after_cleanup": 0, "credential_literal_candidates_reviewed": 20, "candidate_outcome": "synthetic fixtures, public documentation placeholders, or script-name false positives", "image_metadata_keys": []},
+  "excluded": ["private runtime state", "credentials", "account configs", "chat logs", "private stickers", "old git history", "client binaries", "unlicensed external hook", "node_modules"],
+  "limitations": ["No live QQ or WeChat sends from the publication copy", "No full external hook security validation", "FFmpeg-dependent and external voice-tool cases skipped when unavailable", "No guarantee of absence of defects"]
+}

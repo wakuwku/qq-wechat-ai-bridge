@@ -1,0 +1,29 @@
+{
+  "dsh": {
+    "baseUrl": "http://127.0.0.1:19387",
+    "authToken": "",
+    "allowRemote": false
+  },
+  "workspaceTitle": "微信聊天",
+  "agentPreset": "wechat-chat",
+  "ownerWxid": "",
+  "whitelist": {
+    "chats": []
+  },
+  "rateLimit": {
+    "maxPerMinute": 3,
+    "maxPerHour": 20,
+    "minGapMs": 8000
+  },
+  "maxReplyChars": 300,
+  "social": {
+    "proactiveEnabled": false
+  },
+  "sticker": {
+    "probability": 0.34,
+    "maxPerReply": 2
+  },
+  "memory": {
+    "enabled": false
+  }
+}

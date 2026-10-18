@@ -1,0 +1,14 @@
+{
+  "name": "wechat-agent-presets",
+  "version": "0.1.0",
+  "description": "wechat-bridge 的 DSH agent preset bundle：把 wechat-chat 作为 @deepseek-ai/dsh-agent-preset 行插入。守卫 wechat-tool-restrict 与 QQ 版同源，但白名单里移除了 mcp__snowluma__（QQ 工具），保证微信/QQ 互相隔离。",
+  "type": "module",
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./presets/wechat-chat.patch.yml"
+      ]
+    }
+  }
+}

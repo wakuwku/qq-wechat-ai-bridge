@@ -1,0 +1,11 @@
+node_modules/
+state/
+config.json
+.env
+*.log
+*.bak*
+__pycache__/
+*.pyc
+stickers/*
+!stickers/README.md
+!stickers/meta.example.json
