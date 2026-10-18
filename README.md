@@ -1,6 +1,6 @@
-# 大肥鱼 · Dafeiyu
+# QQ / 微信 AI 聊天桥接 · 大肥鱼
 
-让一个有性格的聊天伙伴，住进 QQ 和微信。
+连接 QQ / 微信与 DeepSeek Harness（DSH）的 AI 聊天桥接，支持会话白名单、图片理解和微信表情收发。
 
 ![姐姐请吃饭](docs/assets/dafeiyu-dinner.png)
 
@@ -8,7 +8,7 @@
 
 **这是 Windows 上的社区实验项目，不是腾讯或 DeepSeek 官方产品。** 本次整理版提供 DSH 连接；Codex 并列后端仍属后续工作，不宣称已完成生产接入。
 
-[项目展示](https://wakuwku.github.io/dafeiyu/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [表情库建库](wechat-bridge/tools/sticker/README.md) · [hook 扩展](hook-ext/README.md) · [运维与排障](docs/OPERATIONS.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
+[项目展示](https://wakuwku.github.io/qq-wechat-ai-bridge/) · [QQ 安装](qq-bridge/README.md) · [微信安装](wechat-bridge/README.md) · [表情库建库](wechat-bridge/tools/sticker/README.md) · [hook 扩展](hook-ext/README.md) · [运维与排障](docs/OPERATIONS.md) · [安全与限制](SECURITY.md) · [审计报告](docs/AUDIT.md) · [来源与许可证](THIRD_PARTY_NOTICES.md)
 
 | | QQ | 微信 |
 |---|---|---|
@@ -50,7 +50,7 @@ dafeiyu/
 
 ## 下载与开始
 
-[Releases](https://github.com/wakuwku/dafeiyu/releases) 提供 QQ 和微信两个源码 ZIP，依赖按模块 README 安装。也可以克隆后进入对应模块。配置从 `config.example.json` 复制，**默认白名单为空，不回复任何人**。先只允许自己的测试会话，再逐项开放。
+[Releases](https://github.com/wakuwku/qq-wechat-ai-bridge/releases) 提供 QQ 和微信两个源码 ZIP，依赖按模块 README 安装。也可以克隆后进入对应模块。配置从 `config.example.json` 复制，**默认白名单为空，不回复任何人**。先只允许自己的测试会话，再逐项开放。
 
 私人角色卡、聊天历史、账号、密钥、表情收藏和运行状态不随包发布。展示图是用户提供的项目形象插画，不是聊天效果截图。后续可在 `docs/assets/` 增加脱敏后的实机展示。
 

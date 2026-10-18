@@ -80,12 +80,15 @@ wechat_control/
 
    ```cpp
    #include "NativeEmojiPrepare.h"
-   // ...
-   RegisterNativeEmojiExtensions(server);   // 见 NativeEmojiPrepare.cpp 末尾
+   #include "NativeEmojiProbe.h"
+   // 在已有 RegisterRoutes(httplib::Server& server) 内各注册一次：
+   RegisterNativeEmojiProbe(server);
+   RegisterNativeEmojiPrepare(server);  // 内部注册通用发送与状态查询接口
    ```
 
 3. 编译：MSVC（x64），**C++20**，产物仍然是 `version.dll` 代理。
-   依赖只有 `httplib.h` 与 `nlohmann/json.hpp`（上游 3rdparty 已带）。
+   将 `NativeEmojiPrepare.cpp` 和 `NativeEmojiProbe.cpp` 加入编译单元；`.inl` 由源码包含，不单独编译。
+   依赖包括 cpp-httplib（`httplib.h`）、nlohmann/json（代码包含名为 `json.hpp`）、**MinHook**（`MinHook.h` 及其实现/链接库），以及 Windows SDK。配置对应 include 路径，并将 MinHook 的 x64 实现加入编译或链接匹配的库，不能只复制头文件。保留上游已有的系统库链接配置；此扩展使用的 Windows 加密 API 还需链接 `Advapi32.lib`。
 4. 持久化目录：默认 `state\native-emoji-requests`（相对进程当前目录）。
    要换位置就在编译时覆盖：
 
